@@ -19,7 +19,13 @@ function strip(article) {
   return article.replace(/^(a |an |the )/i, '').trim();
 }
 
-bands.sort((a, b) => strip(a).localeCompare(strip(b)));
+const ul = document.getElementById("band");
+
+sortedBands.forEach((band) => {
+    const li = document.createElement("li");
+    li.textContent = band;
+    ul.appendChild(li);
+});
 
 const ul = document.getElementById("band");
 
